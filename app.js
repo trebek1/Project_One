@@ -91,7 +91,7 @@ app.post('/profile', function(req,res){
 	nwyr = req.body;
 	
 	if(nwyr){
-		
+
 	req.currentUser().then(function(dbUser){
 	res.render('user/profile', {Box: nwyr, Batman: dbUser.username});
 	});
@@ -127,7 +127,9 @@ app.post('/signup', function(req,res){
 
 app.delete('/logout', function(req,res){
 	req.logout();
-	res.redirect('/login');
+	console.log('starcraft');
+	res.redirect('/');
+	console.log('starcraft II'); 
 });
 
 
