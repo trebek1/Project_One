@@ -11,20 +11,19 @@
 	<div class="container">
 		
 		<div>
-		<h1>Hi <%= Batman %></h1>
+		<h1>Hi! <%= Batman %></h1>
 		</div>
 
-		<form class = "yearForm" method="GET" action="/search"> 
-			<input type ="text" name = "year" 	placeholder = "year">
-			<button>Logout</button>
+		<form id = "year" class = "yearForm" method="POST" action="/profile"> 
+			<input type ="text" name = "year" 	placeholder = "Year">
+			<button onclick="myFunction(document.getElementById('yearlist').append('<a>').req.body 
+			)">Add Year to Favorites</button>
+			<br>
+			<br>
+			<button> Log Out </button>
 		</form>
-	
-	<form method="POST" action="/profile">
-	<input type="text" name="year" placeholder="year">
-		<button> Add </button>
-		<button>login</button>	
 
-	</form>
-	
+		<ul id = 'yearlist'> </ul>
+
 </body>
 </html>

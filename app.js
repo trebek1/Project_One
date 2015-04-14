@@ -88,22 +88,15 @@ app.get('/profile', function(req,res){
 
 
 app.post('/profile', function(req,res){
-	nwyr = req.body; 	 
+	nwyr = req.body;
+	
 	if(nwyr){
-	res.render('user/profile', {Box: nwyr});
-	}
-}); 
-
-
-
-	// req.currentUser().then(function(dbUser){
-	// 	if (dbUser){
-	// 			res.render('profile', {Bananna: dbUser});
-	// 		});
-	// 	 else {
-	// 		res.redirect('/login');
-	// 	}};
-	// });
+		
+	req.currentUser().then(function(dbUser){
+	res.render('user/profile', {Box: nwyr, Batman: dbUser.username});
+	});
+}});
+	
 
 app.post('/login', function(req,res){
 	var username = req.body.username;
@@ -170,13 +163,12 @@ app.delete('/logout', function(req,res){
 // 				</form>
 
 
-//Where each favorite is printed to the screen
+// Where each favorite is printed to the screen
 // <ul>
 // 			<% idk.forEach(function(fav){ %>
 // 				<li>
 // 					imdbID: <%= fav.imdbID %>
-// 					Rating: <%= fav.rating %>
-// 					UserId: <%= fav.UserId %>
+					
 
 					
 // 				</li>
