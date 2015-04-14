@@ -34,6 +34,20 @@ app.use("/", function(req,res,next) {
 	next();
 });
 
+// app.get("/", function(req,res,next){
+// 	var player;
+// 	function onYouTubeIframeAPIReady() {
+// 	  player = new YT.Player('player', {
+	    
+// 	    videoId: 'M7lc1UVf-VE',
+// 	    events: {
+// 	      'onReady': onPlayerReady,
+// 	      'onStateChange': onPlayerStateChange
+// 	    }
+// 	  });
+// 	}
+// });
+
 app.use(methodOverride("_method"));
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -71,6 +85,16 @@ app.get('/profile', function(req,res){
 		}
 	});
 }); 
+
+
+app.post('/profile', function(req,res){
+	nwyr = req.body; 	 
+	if(nwyr){
+	res.render('user/profile', {Box: nwyr});
+	}
+}); 
+
+
 
 	// req.currentUser().then(function(dbUser){
 	// 	if (dbUser){
@@ -114,6 +138,68 @@ app.delete('/logout', function(req,res){
 });
 
 
+//Using the OMDB API to search for movies 
+
+// app.get('/songs',function(req,res){
+// 	var song = req.query.q3;
+//  var artist = 
+// 	if (!movieSearch) {
+// 		res.render("search", {movies: [], noMovies: true});
+// 	} else {
+// 		var url = "http://www.omdbapi.com?s="+movieSearch;
+
+// 		request(url, function(err, resp, body){
+// 			console.log("I'm in here 2");
+// 			if (!err && resp.statusCode === 200) {
+// 				console.log("I'm in here 3");
+// 				var jsonData = JSON.parse(body);
+// 				if (!jsonData.Search) {
+// 					res.render("search", {movies: [], noMovies: true});
+// 				}
+// 				res.render("search", {movies: jsonData.Search, noMovies: false});
+// 			}
+// 		});
+// 	}
+// });
+
+
+// form where movie title was recieved 
+// <form class="myForm" method="GET" action="/search">
+// 					<input type="text" name="q3" placeholder="Search">
+// 					<button>Click me</button>
+// 				</form>
+
+
+//Where each favorite is printed to the screen
+// <ul>
+// 			<% idk.forEach(function(fav){ %>
+// 				<li>
+// 					imdbID: <%= fav.imdbID %>
+// 					Rating: <%= fav.rating %>
+// 					UserId: <%= fav.UserId %>
+
+					
+// 				</li>
+// 			<% }) %>
+// 		</ul>
+
+//idk is defined here 
+
+// app.get('/profile', function(req,res){
+// 	req.currentUser().then(function(dbUser){
+// 		if (dbUser) {
+// 			db.FavoriteMovie.findAll({where: {UserId: dbUser.id}})
+// 			  .then(function(movies){
+// 			  	console.log("\n\n\n\n\nHELLO", movies);
+// 			  	console.log("STARCRAFT STARCRAFT STARCRAFT"); 
+// 			  	console.log(dbUser); 
+// 				res.render('user/profile', {foo: dbUser, idk: movies});
+// 			});
+// 		} else {
+// 			res.redirect('/login');
+// 		}
+// 	});
+// });
 
 
 app.listen(3000, function(){

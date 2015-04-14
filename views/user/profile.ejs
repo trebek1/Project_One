@@ -14,16 +14,17 @@
 		<h1>Hi <%= Batman %></h1>
 		</div>
 
-		<form method="POST" action="/logout?_method=DELETE">
+		<form class = "yearForm" method="GET" action="/search"> 
+			<input type ="text" name = "year" 	placeholder = "year">
 			<button>Logout</button>
 		</form>
 	
 	<form method="POST" action="/profile">
-
 	<input type="text" name="year" placeholder="year">
 		<button> Add </button>
-		<button>login</button>
+		<button>login</button>	
+
 	</form>
-	</div>
+	
 </body>
 </html>
