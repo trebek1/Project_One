@@ -61,21 +61,25 @@ app.get('/signup', function(req,res){
 });
 
 
-// app.get('/profile', function(req,res){
-// 	req.currentUser().then(function(dbUser){
-// 		i
-// 				res.render('user/profile', {User.username: dbUser});
-// 			});
-// 		} else {
-// 			res.redirect('/login');
-// 		}
-// 	});
-// });
+app.get('/profile', function(req,res){
+	req.currentUser().then(function(dbUser){
+		if (dbUser) {
+			console.log(dbUser); 
+			res.render('user/profile', {Batman: dbUser.username});
+		} else {
+			res.redirect('login');
+		}
+	});
+}); 
 
-
-
-
-
+	// req.currentUser().then(function(dbUser){
+	// 	if (dbUser){
+	// 			res.render('profile', {Bananna: dbUser});
+	// 		});
+	// 	 else {
+	// 		res.redirect('/login');
+	// 	}};
+	// });
 
 app.post('/login', function(req,res){
 	var username = req.body.username;

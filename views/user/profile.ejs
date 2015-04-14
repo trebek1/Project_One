@@ -10,18 +10,20 @@
 <body>
 	<div class="container">
 		
-		<h1>Hi <%= User.username %></h1>
+		<div>
+		<h1>Hi <%= Batman %></h1>
+		</div>
+
 		<form method="POST" action="/logout?_method=DELETE">
 			<button>Logout</button>
 		</form>
-	<form method="POST" action="/login">
-		<input type="text" name="year" placeholder="year">
-		<button> Add </button>
+	
+	<form method="POST" action="/profile">
 
+	<input type="text" name="year" placeholder="year">
+		<button> Add </button>
 		<button>login</button>
 	</form>
-
-
 	</div>
 </body>
 </html>
