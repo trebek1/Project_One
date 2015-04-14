@@ -57,7 +57,25 @@ app.get('/login', function(req,res){
 
 app.get('/signup', function(req,res){
 	res.render("user/signup");
+
 });
+
+
+// app.get('/profile', function(req,res){
+// 	req.currentUser().then(function(dbUser){
+// 		i
+// 				res.render('user/profile', {User.username: dbUser});
+// 			});
+// 		} else {
+// 			res.redirect('/login');
+// 		}
+// 	});
+// });
+
+
+
+
+
 
 app.post('/login', function(req,res){
 	var username = req.body.username;

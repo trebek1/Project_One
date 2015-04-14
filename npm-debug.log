@@ -1,0 +1,150 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'postgres' ]
+2 info using npm@2.5.1
+3 info using node@v0.12.0
+4 warn package.json p1@1.0.0 No description
+5 warn package.json p1@1.0.0 No repository field.
+6 silly cache add args [ 'postgres', null ]
+7 verbose cache add spec postgres
+8 silly cache add parsed spec { raw: 'postgres',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'postgres',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 verbose addNamed postgres@*
+10 silly addNamed semver.valid null
+11 silly addNamed semver.validRange *
+12 silly addNameRange { name: 'postgres', range: '*', hasData: false }
+13 silly mapToRegistry name postgres
+14 silly mapToRegistry using default registry
+15 silly mapToRegistry registry https://registry.npmjs.org/
+16 silly mapToRegistry uri https://registry.npmjs.org/postgres
+17 verbose addNameRange registry:https://registry.npmjs.org/postgres not in flight; fetching
+18 verbose request uri https://registry.npmjs.org/postgres
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 7:18:26 PM
+21 verbose request id d0cdad6eeee5c424
+22 verbose etag "647809U4Q7N40F8W8042QD9KL"
+23 http request GET https://registry.npmjs.org/postgres
+24 http 304 https://registry.npmjs.org/postgres
+25 silly get cb [ 304,
+25 silly get   { date: 'Tue, 14 Apr 2015 02:18:26 GMT',
+25 silly get     server: 'Apache',
+25 silly get     via: '1.1 varnish',
+25 silly get     'last-modified': 'Tue, 14 Apr 2015 02:18:26 GMT',
+25 silly get     'cache-control': 'max-age=60',
+25 silly get     etag: '"647809U4Q7N40F8W8042QD9KL"',
+25 silly get     age: '0',
+25 silly get     'x-served-by': 'cache-sjc3126-SJC',
+25 silly get     'x-cache': 'MISS',
+25 silly get     'x-cache-hits': '0',
+25 silly get     'x-timer': 'S1428977906.447158,VS0,VE350',
+25 silly get     vary: 'Accept',
+25 silly get     'content-length': '0',
+25 silly get     'keep-alive': 'timeout=10, max=50',
+25 silly get     connection: 'Keep-Alive' } ]
+26 verbose etag https://registry.npmjs.org/postgres from cache
+27 verbose get saving postgres to /Users/Trebek/.npm/registry.npmjs.org/postgres/.cache.json
+28 silly addNameRange number 2 { name: 'postgres', range: '*', hasData: true }
+29 silly addNameRange versions [ 'postgres', [ '0.0.1' ] ]
+30 verbose addNamed postgres@0.0.1
+31 silly addNamed semver.valid 0.0.1
+32 silly addNamed semver.validRange 0.0.1
+33 silly cache afterAdd postgres@0.0.1
+34 verbose afterAdd /Users/Trebek/.npm/postgres/0.0.1/package/package.json not in flight; writing
+35 verbose afterAdd /Users/Trebek/.npm/postgres/0.0.1/package/package.json written
+36 silly install resolved [ { name: 'postgres',
+36 silly install resolved     version: '0.0.1',
+36 silly install resolved     description: 'very basic libpg binding to node',
+36 silly install resolved     author: { name: 'Ryan Dahl' },
+36 silly install resolved     main: './postgres',
+36 silly install resolved     scripts: { install: 'node-waf configure build' },
+36 silly install resolved     _id: 'postgres@0.0.1',
+36 silly install resolved     engines: { node: '*' },
+36 silly install resolved     _nodeSupported: true,
+36 silly install resolved     _npmVersion: '0.2.7-2',
+36 silly install resolved     _nodeVersion: 'v0.3.1-pre',
+36 silly install resolved     dist:
+36 silly install resolved      { tarball: 'http://registry.npmjs.org/postgres/-/postgres-0.0.1.tgz',
+36 silly install resolved        shasum: '93aecd0a7fcf620792bcc2c87a2ead432adaa833' },
+36 silly install resolved     directories: {},
+36 silly install resolved     _shasum: '93aecd0a7fcf620792bcc2c87a2ead432adaa833',
+36 silly install resolved     _resolved: 'https://registry.npmjs.org/postgres/-/postgres-0.0.1.tgz',
+36 silly install resolved     _from: 'postgres@*',
+36 silly install resolved     readme: 'ERROR: No README data found!' } ]
+37 info install postgres@0.0.1 into /Users/Trebek/code/Project/Project_One
+38 info installOne postgres@0.0.1
+39 verbose installOne of postgres to /Users/Trebek/code/Project/Project_One not in flight; installing
+40 verbose lock using /Users/Trebek/.npm/_locks/postgres-904047233d0d3fc8.lock for /Users/Trebek/code/Project/Project_One/node_modules/postgres
+41 silly install write writing postgres 0.0.1 to /Users/Trebek/code/Project/Project_One/node_modules/postgres
+42 silly cache addNamed cb postgres@0.0.1
+43 verbose unbuild node_modules/postgres
+44 verbose gentlyRm vacuuming /Users/Trebek/code/Project/Project_One/node_modules/postgres
+45 verbose tar unpack /Users/Trebek/.npm/postgres/0.0.1/package.tgz
+46 verbose tar unpacking to /Users/Trebek/code/Project/Project_One/node_modules/postgres
+47 verbose gentlyRm vacuuming /Users/Trebek/code/Project/Project_One/node_modules/postgres
+48 silly gunzTarPerm modes [ '755', '644' ]
+49 silly gunzTarPerm extractEntry
+50 silly gunzTarPerm extractEntry .gitignore
+51 silly gunzTarPerm extractEntry ._.npmignore
+52 silly gunzTarPerm extractEntry .npmignore
+53 silly gunzTarPerm extractEntry binding.cc
+54 silly gunzTarPerm extractEntry LICENSE-MIT
+55 silly gunzTarPerm extractEntry ._package.json
+56 silly gunzTarPerm extractEntry package.json
+57 silly gunzTarPerm extractEntry postgres.js
+58 silly gunzTarPerm extractEntry README
+59 silly gunzTarPerm extractEntry test.js
+60 silly gunzTarPerm extractEntry type-oids.h
+61 silly gunzTarPerm extractEntry wscript
+62 info preinstall postgres@0.0.1
+63 silly install resolved []
+64 verbose about to build /Users/Trebek/code/Project/Project_One/node_modules/postgres
+65 info build /Users/Trebek/code/Project/Project_One/node_modules/postgres
+66 verbose linkStuff [ false,
+66 verbose linkStuff   false,
+66 verbose linkStuff   false,
+66 verbose linkStuff   '/Users/Trebek/code/Project/Project_One/node_modules' ]
+67 info linkStuff postgres@0.0.1
+68 verbose linkBins postgres@0.0.1
+69 verbose linkMans postgres@0.0.1
+70 verbose rebuildBundles postgres@0.0.1
+71 info install postgres@0.0.1
+72 verbose unsafe-perm in lifecycle true
+73 info postgres@0.0.1 Failed to exec install script
+74 verbose unlock done using /Users/Trebek/.npm/_locks/postgres-904047233d0d3fc8.lock for /Users/Trebek/code/Project/Project_One/node_modules/postgres
+75 verbose stack Error: postgres@0.0.1 install: `node-waf configure build`
+75 verbose stack Exit status 127
+75 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
+75 verbose stack     at EventEmitter.emit (events.js:110:17)
+75 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:14:12)
+75 verbose stack     at ChildProcess.emit (events.js:110:17)
+75 verbose stack     at maybeClose (child_process.js:1008:16)
+75 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1080:5)
+76 verbose pkgid postgres@0.0.1
+77 verbose cwd /Users/Trebek/code/Project/Project_One
+78 error Darwin 14.1.0
+79 error argv "node" "/usr/local/bin/npm" "install" "postgres"
+80 error node v0.12.0
+81 error npm  v2.5.1
+82 error code ELIFECYCLE
+83 error postgres@0.0.1 install: `node-waf configure build`
+83 error Exit status 127
+84 error Failed at the postgres@0.0.1 install script 'node-waf configure build'.
+84 error This is most likely a problem with the postgres package,
+84 error not with npm itself.
+84 error Tell the author that this fails on your system:
+84 error     node-waf configure build
+84 error You can get their info via:
+84 error     npm owner ls postgres
+84 error There is likely additional logging output above.
+85 verbose exit [ 1, true ]
+86 verbose unbuild node_modules/postgres
+87 info preuninstall postgres@0.0.1
+88 info uninstall postgres@0.0.1
+89 verbose unbuild rmStuff postgres@0.0.1 from /Users/Trebek/code/Project/Project_One/node_modules
+90 info postuninstall postgres@0.0.1
+91 verbose gentlyRm vacuuming /Users/Trebek/code/Project/Project_One/node_modules/postgres
+92 silly gentlyRm purging /Users/Trebek/code/Project/Project_One/node_modules/postgres
+93 silly gentlyRm quitting because other entries in /Users/Trebek/code/Project/Project_One/node_modules
