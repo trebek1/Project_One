@@ -1,15 +1,15 @@
 "use strict";
 module.exports = function(sequelize, DataTypes) {
-  var User_Song = sequelize.define("User_Song", {
-    UserId: DataTypes.INTEGER,
+  var Song = sequelize.define("Song", {
+    song_name: DataTypes.STRING,
     year: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
-        this.belongsTo(models.User)
+        this.belongsTo(models.User_Song)
         // associations can be defined here
       }
     }
   });
-  return User_Song;
+  return Song;
 };
