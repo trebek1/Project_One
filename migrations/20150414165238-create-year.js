@@ -9,7 +9,7 @@ module.exports = {
   		  	primaryKey: true,
   		  	type: DataTypes.INTEGER
   		},
-  		userId: {
+  		UserId: {
   			type: DataTypes.INTEGER
   		},
   		year: {

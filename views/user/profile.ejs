@@ -11,7 +11,7 @@
 	<div class="container" id = "container">
 		
 		<div>
-		<h1>Hi! <%= Batman %></h1>
+		<h1>Hello <%= username %>!</h1>
 		</div>
 
 		<form id = "year" class = "yearForm" method="POST" action="/profile"> 
@@ -33,7 +33,12 @@
 		</form>
 	
 	</div>
-		<h2> <% Year %> </h2> 
+		
+		<ul>
+			<% years.forEach(function(year) { %>
+				<li><a href="/years/<%= year.year %>"><%= year.year %></a></li>
+			<% }); %>
+		</ul>
 	
 	</div>	
 	

@@ -10,21 +10,10 @@
 
 </head>
 <body>
-	<div class="container">
-		<form method="POST" action="/year">
-		
-		<div>
-		<h1>Hi! <%= Batman %></h1>
-		<h2> <%= Byear %> </h2>
-		</div>
-
-		</form>
-		
-		<form method = 'POST' action = '/logout?_method=DELETE'>
-
-		<button> Log Out </button>
-
-		</form>
+	<div>
+		<% results.forEach(function(result) { %>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/?list=<%= result.id.playlistId %>" frameborder="0" allowfullscreen></iframe>
+		<% }); %>
 	</div>
 </body>
 </html>
