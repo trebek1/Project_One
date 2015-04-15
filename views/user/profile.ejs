@@ -14,8 +14,10 @@
 		<h1>Hi! <%= Batman %></h1>
 		</div>
 
-		<form id = "year" class = "yearForm" method="POST" action="/profile"> 
+		<form id = "year" class = "yearForm" method="POST" action="/songs"> 
+			
 			<input type ="text" name = "year" 	placeholder = "Year">
+			
 			<button onclick="myFunction(document.getElementById('yearlist').append('<a>').req.body 
 			)">Add Year to Profile</button>
 			<br>
@@ -28,7 +30,9 @@
 
 		</form>
 
-		<ul id = 'yearlist'> </ul>
+		<ul id='yearlist'>
+			
+		</ul>
 
 </body>
 </html>

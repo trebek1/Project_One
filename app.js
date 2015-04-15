@@ -76,6 +76,8 @@ app.get('/signup', function(req,res){
 
 
 app.get('/profile', function(req,res){
+	// fetch user's years and pass to view
+
 	req.currentUser().then(function(dbUser){
 		if (dbUser) {
 			console.log(dbUser); 
@@ -87,15 +89,22 @@ app.get('/profile', function(req,res){
 }); 
 
 
-app.post('/profile', function(req,res){
-	nwyr = req.body;
+app.post('/years', function(req,res){
+	// create year with req.body
+
+
+	db.Year.
 	
 	if(nwyr){
-
-	req.currentUser().then(function(dbUser){
-	res.render('user/profile', {Box: nwyr, Batman: dbUser.username});
+		req.currentUser().then(function(dbUser){
+		res.render('user/profile', {Box: nwyr, Batman: dbUser.username});
 	});
 }});
+
+app.get('/years/:year', function(req, res) {
+	// do api call
+	// render view with api results
+});
 	
 
 app.post('/login', function(req,res){
