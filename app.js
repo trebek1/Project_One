@@ -77,11 +77,12 @@ app.get('/signup', function(req,res){
 
 app.get('/profile', function(req,res){
 	// fetch user's years and pass to view
-
+	var year = req.body; 
+	console.log(year); 
 	req.currentUser().then(function(dbUser){
 		if (dbUser) {
 			console.log(dbUser); 
-			res.render('user/profile', {Batman: dbUser.username});
+			res.render('user/profile', {Batman: dbUser.username, Year: year});
 		} else {
 			res.redirect('login');
 		}
@@ -89,23 +90,26 @@ app.get('/profile', function(req,res){
 }); 
 
 
-app.post('/years', function(req,res){
+app.post('/profile', function(req,res){
+	console.log("Hello from profile post route")
 	// create year with req.body
 
+	var year = req.body.year; 
+	console.log(year); 
 
-	db.Year.
+	db.Year.year = year;
 	
-	if(nwyr){
-		req.currentUser().then(function(dbUser){
-		res.render('user/profile', {Box: nwyr, Batman: dbUser.username});
-	});
-}});
+	console.log("STARWARS",db.Year.year);
 
-app.get('/years/:year', function(req, res) {
+	req.currentUser().then(function(dbUser){
+		res.render('year', {Batman: dbUser.username, Byear: year});
+		});
+	});
+
+app.get('/:year', function(req, res) {
 	// do api call
 	// render view with api results
 });
-	
 
 app.post('/login', function(req,res){
 	var username = req.body.username;
@@ -204,7 +208,14 @@ app.delete('/logout', function(req,res){
 // 	});
 // });
 
+app.listen(process.env.PORT || 3000);
 
-app.listen(3000, function(){
-	console.log("I'm listening");
-});
+
+
+
+
+
+
+
+
+

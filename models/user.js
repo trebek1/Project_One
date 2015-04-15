@@ -61,7 +61,7 @@ module.exports = function (sequelize, DataTypes){
         });
       },
       associate: function(models) {
-        this.hasMany(models.User_Song)
+        this.hasMany(models.Year)
         // associations can be defined here
       }
 

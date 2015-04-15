@@ -8,18 +8,17 @@
 
 </head>
 <body>
-	<div class="container">
+	<div class="container" id = "container">
 		
 		<div>
 		<h1>Hi! <%= Batman %></h1>
 		</div>
 
-		<form id = "year" class = "yearForm" method="POST" action="/songs"> 
+		<form id = "year" class = "yearForm" method="POST" action="/profile"> 
 			
-			<input type ="text" name = "year" 	placeholder = "Year">
+			<input type ="text" name = "year" placeholder = "Year">
 			
-			<button onclick="myFunction(document.getElementById('yearlist').append('<a>').req.body 
-			)">Add Year to Profile</button>
+			<button>Add Year to Profile</button>
 			<br>
 			<br>
 		</form>
@@ -28,11 +27,16 @@
 
 		<button> Log Out </button>
 
+		<script type='text/javascript'>
+		var input = document.createElement("button");
+                button.type = "text";
+                button.name = "member" + i;
+                container.appendChild(button);
+        </script>
+
 		</form>
 
-		<ul id='yearlist'>
-			
-		</ul>
 
+		
 </body>
 </html>
