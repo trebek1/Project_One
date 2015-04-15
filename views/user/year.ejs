@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,39 +10,21 @@
 
 </head>
 <body>
-	<div class="container" id = "container">
+	<div class="container">
+		<form method="POST" action="/year">
 		
 		<div>
 		<h1>Hi! <%= Batman %></h1>
+		<h2> <%= Byear %> </h2>
 		</div>
 
-		<form id = "year" class = "yearForm" method="POST" action="/profile"> 
-			
-			<input type ="text" name = "year" placeholder = "Year">
-			
-			<button>Add Year to Profile</button>
-			<br>
-			<br>
-
-
-		
 		</form>
-
 		
 		<form method = 'POST' action = '/logout?_method=DELETE'>
 
 		<button> Log Out </button>
+
 		</form>
-	
 	</div>
-		<h2> <% Year %> </h2> 
-	
-	</div>	
-	
-	
 </body>
 </html>
-
-
-
-

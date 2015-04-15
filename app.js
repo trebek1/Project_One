@@ -95,21 +95,19 @@ app.post('/profile', function(req,res){
 	// create year with req.body
 
 	var year = req.body.year; 
-	console.log(year); 
 
-	db.Year.year = year;
+	db.Year.create({year: year}); 
 	
-	console.log("STARWARS",db.Year.year);
 
 	req.currentUser().then(function(dbUser){
-		res.render('year', {Batman: dbUser.username, Byear: year});
+		res.render('user/profile', {Batman: dbUser.username, Year: year});
 		});
 	});
 
-app.get('/:year', function(req, res) {
-	// do api call
-	// render view with api results
-});
+// app.get('/:year', function(req, res) {
+// 	// do api call
+// 	// render view with api results
+// });
 
 app.post('/login', function(req,res){
 	var username = req.body.username;
