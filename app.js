@@ -70,7 +70,11 @@ app.get('/profile', function(req,res){
 
 app.post('/profile', function(req,res){
 	var year = req.body.year;
-	db.Year.create({year: year, UserId: req.session.userId });
+	if(year){
+	db.Year.create({year: year, UserId: req.session.userId })};
+	
+
+
 	res.redirect('/profile');
 });
 
