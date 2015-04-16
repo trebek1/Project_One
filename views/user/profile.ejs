@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<title>Profile Page</title>
-	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
 </head>
 <body>
-	<div class="container" id = "container">
-		<div>
-			<h1>Hello <%= username %>!</h1>
-			</div>
-		<form id = "year" class = "yearForm" method="POST" action="/profile"> 
-			<input type ="text" name = "year" placeholder = "Year">
-			<button>Add Year to Profile</button>
-			<br>
-			<br>
-		</form>
+ 	<div class="container">     
+        <div class="span12"> 
+			<nav class="navbar navbar-inverse"></nav> 
+			<div class="container" id = "container">
+				<div>
+					<h1>Hello <%= username %>!</h1>
+						<h4> Instructions </h4>
+						<ul> 1. Enter Year Below</ul>
+						<ul> 2. Click Hyperlink Generated on page to see playlists of music from that year </ul>
+					</div>
+				<form id = "year" class = "yearForm" method="POST" action="/profile"> 
+					<input type ="number" name = "year" placeholder = "Year">
+					<button>Add Year to Profile</button>
+					<br>
+					<br>
+				</form>
 
-		<form method = 'POST' action = '/logout?_method=DELETE'>
-		<button> Log Out </button>
-		</form>
+				<form method = 'POST' action = '/logout?_method=DELETE'>
+				<button> Log Out </button>
+				<br>
+				</form>
+			</div>
+			<br>
+			<h4> Saved Years </h4>
+				<ul id = "yearlist">
+					<% years.forEach(function(year) { %>
+						<li><a href="/years/<%= year.year %>"><%=year.year%></a></li>
+					<% }); %>
+				</ul>
+			</div>	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 	</div>
-		<ul id = "yearlist">
-			<% years.forEach(function(year) { %>
-				<li><a href="/years/<%= year.year %>"><%=year.year%></a></li>
-			<% }); %>
-		</ul>
-	</div>	
+		</div>
 </body>
 </html>
 

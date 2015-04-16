@@ -1,13 +1,12 @@
 "use strict";
-
 module.exports = {
   up: function(migration, DataTypes, done) {
   	migration.createTable("Years", {
   		id: {
-  		  	allowNull: false,
-  		  	autoIncrement: true,
-  		  	primaryKey: true,
-  		  	type: DataTypes.INTEGER
+		  	allowNull: false,
+		  	autoIncrement: true,
+		  	primaryKey: true,
+		  	type: DataTypes.INTEGER
   		},
   		UserId: {
   			type: DataTypes.INTEGER
@@ -25,7 +24,6 @@ module.exports = {
   		}
   	}).done(done);
   },
-
   down: function(migration, DataTypes, done) {
   	migration.dropTable("Years").done(done);
   }

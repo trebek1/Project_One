@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Profile Page</title>
-	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
 <body>
-	<div>
-		<% results.forEach(function(result) { %>
-		<li id = "playlist_list"><iframe width="560" height="315" src="https://www.youtube.com/embed/?list=<%= result.id.playlistId %>" frameborder="0" allowfullscreen></iframe></li>
-		<br>
-		<form id = "year" class = "yearForm" method="POST" action="/profile"> 
-		<button> Back to Profile </button> 
-		</form>
-		<br>
-		<% }); %>
+	<div class="container">     
+        <div class="span12"> 
+			<nav class="navbar navbar-inverse"></nav> 
+			<div>
+				<% results.forEach(function(result) { %>
+				<li id = "playlist_list"><iframe width="560" height="315" src="https://www.youtube.com/embed/?list=<%= result.id.playlistId %>" frameborder="0" allowfullscreen></iframe></li>
+				<br>
+				<form id = "year" class = "yearForm" method="POST" action="/profile"> 
+				<button> Back to Profile </button> 
+				</form>
+				<br>
+				<% }); %>
+			</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	</div>
+		</div>
 </body>
 </html>
