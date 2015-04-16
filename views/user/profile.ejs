@@ -9,40 +9,26 @@
 </head>
 <body>
 	<div class="container" id = "container">
-		
 		<div>
-		<h1>Hello <%= username %>!</h1>
-		</div>
-
+			<h1>Hello <%= username %>!</h1>
+			</div>
 		<form id = "year" class = "yearForm" method="POST" action="/profile"> 
-			
 			<input type ="text" name = "year" placeholder = "Year">
-			
 			<button>Add Year to Profile</button>
 			<br>
 			<br>
-
-
-		
 		</form>
 
-		
 		<form method = 'POST' action = '/logout?_method=DELETE'>
-
 		<button> Log Out </button>
 		</form>
-	
 	</div>
-		
-		<ul>
+		<ul id = "yearlist">
 			<% years.forEach(function(year) { %>
-				<li><a href="/years/<%= year.year %>"><%= year.year %></a></li>
+				<li><a href="/years/<%= year.year %>"><%=year.year%></a></li>
 			<% }); %>
 		</ul>
-	
 	</div>	
-	
-	
 </body>
 </html>
 
