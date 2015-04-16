@@ -11,6 +11,8 @@
 	<div class="container">     
         <div class="span12"> 
 			<nav class="navbar navbar-inverse"></nav> 
+			<h1> Playlists Found Based On Input Year </h1>
+			<br>
 			<div>
 				<% results.forEach(function(result) { %>
 				<li id = "playlist_list"><iframe width="560" height="315" src="https://www.youtube.com/embed/?list=<%= result.id.playlistId %>" frameborder="0" allowfullscreen></iframe></li>
