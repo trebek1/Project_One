@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<title>Sign Up Page</title>
-</head>
-<body>
-	<div class="container">     
-        <div class="span12"> 
-			<nav class="navbar navbar-inverse">				
-				<div class="container-fluid">
-				    <div class="navbar-header">
-				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				        <span class="sr-only">Toggle navigation</span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				      </button>
-				      <a class="navbar-brand" href="/">Home</a>
-				    </div>
-			</nav> 
-
-
-				<div>
-					<h1> Sign Up Page </h1> 	
-				</div>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<title>Sign Up Page</title>
+	</head>
+	<body>
+		<div class="container">     
+	        <div class="span12"> 
+				<nav class="navbar navbar-inverse">				
+					<div class="container-fluid">
+					    <div class="navbar-header">
+					      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					      </button>
+					      <a class="navbar-brand" href="/">Home</a>
+					    </div>
+					</div>    
+				</nav> 
+				<h1> Sign Up Page </h1> 	
 				<br>
-			<form method="POST" action="/signup">
-				<input type="text" name="username" placeholder="username">
-				<input type="password" name="password" placeholder="password">
-				<button>Sign Up</button>
-			</form>
-			<br>
-			<a href="/login">Login Page</a>
-			<br>
-			<h5> Instructions </h5>
-			<ul> 1. Enter a username </ul> 
-			<ul> 2. Enter a password </ul>
-			<ul> 3. Password and username must be at least 7 characters long </ul>
-			<ul> 4. Once you press "sign up", if the username is accepted you will be placed on the login page where you can now use your username and password </ul>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	</div>
+				<form method="POST" action="/signup">
+					<input type="text" name="username" placeholder="username">
+					<input type="password" name="password" placeholder="password">
+					<button>Sign Up</button>
+				</form>
+				<br>
+				<a href="/login">Login Page</a>
+				<br>
+				<h5> Instructions </h5>
+				<ul> 1. Enter a username </ul> 
+				<ul> 2. Enter a password </ul>
+				<ul> 3. Password and username must be at least 7 characters long </ul>
+				<ul> 4. Once you press "sign up", if the username is accepted you will be placed on the login page where you can now use your username and password </ul>
+			</div>
 		</div>
-</body>
+		<div class="panel-footer">Created by Alex Trzeciak</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	</body>
 </html>

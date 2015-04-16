@@ -1,18 +1,15 @@
 {
   "development": {
-    
     "database": "project_one",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-   
     "use_env_variable": "HEROKU_POSTGRESQL_BROWN_URL"
   }
 }

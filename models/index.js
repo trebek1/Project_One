@@ -18,8 +18,6 @@ if(config.use_env_variable){
   config.database=db_info[6];  
 }
 //////////////////////////////
-
-
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
 var db        = {};
 

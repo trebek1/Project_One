@@ -1,159 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Welcome to MyTime Music!</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-</head>
-<body>		
-    <div class="container">     
-        <div class="span12">  
-            <nav class="navbar navbar-inverse"></nav> 
-            </div>
-        	<div class="container">
-        		<h1> Welcome to MyTime Music! </h1> 
-        		<br>
+    <head>
+    	<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>Welcome to MyTime Music!</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    </head>
+    <body>		
+        <div class="container">     
+            <div class="span12">  
+                <nav class="navbar navbar-inverse"></nav> 
+            	<div class="container">
+            		<h1> Welcome to MyTime Music! </h1> 
+            		<br>
         			<a href="/login">Login Page</a>
         			<br><br>
         			<a href="/signup">Sign Up Page</a>
-        	</div>
-            <br>
-            <canvas id="id" width="1000" height="1000"></canvas>
-            <script>
-            window.onload = function(){/**
-             * Conway's Game of Life.
-             *
-             * A simple Javascript implementation by ankr.
-             *
-             * @author http://ankr.dk
-             */
-            var canvas = document.getElementById('id').getContext('2d'),
-                cells = [];
-            canvas.strokeStyle = '#00FF00';
-            canvas.fillStyle = '009900';
-
-            init(); 
-
-            /**
-             * Initialize game.
-             *
-             * Will place a Gosper glider gun in the world and start simulation.
-             */
-            function init() {
-                for (var i=0; i<70; i++) {
-                    cells[i] = [];
-                    for (var j=0; j<50; j++) {
-                        cells[i][j] = 0;
-                    }
-                }
-                
-                // Prefilled cells
-                [
-                    // Gosper glider gun
-                    [1, 5],[1, 6],[2, 5],[2, 6],[11, 5],[11, 6],[11, 7],[12, 4],[12, 8],[13, 3],[13, 9],[14, 3],[14, 9],[15, 6],[16, 4],[16, 8],[17, 5],[17, 6],[17, 7],[18, 6],[21, 3],[21, 4],[21, 5],[22, 3],[22, 4],[22, 5],[23, 2],[23, 6],[25, 1],[25, 2],[25, 6],[25, 7],[35, 3],[35, 4],[36, 3],[36, 4],
-                    
-
-                            
-                   // [1, 15],[1, 16],[2, 15],[2, 16],[11, 15],[11, 16],[11, 17],[12, 14],[12, 18],[13, 13],[13, 19],[14, 3],[14, 19],[15, 16],[16, 14],[16, 18],[17, 15],[17, 16],[17, 17],[18, 16],[21, 13],[21, 14],[21, 15],[22, 13],[22, 14],[22, 15],[23, 12],[23, 16],[25, 11],[25, 12],[25, 16],[25, 17],[35, 13],[35, 14],[36, 13],[36, 14],
-
-
-
-                    // Random cells
-                    // If you wait enough time these will eventually take part
-                    // in destroying the glider gun, and the simulation will be in a "static" state.
-                    //[60, 47],[61,47],[62,47],
-                    //[60, 48],[61,48],[62,48],
-                    [60, 49],[61,49],[62,49],
-                    [60, 51],[61,51],[62,51],
-
-                    //[80, 67],[81,67],[82,67],
-                    //[80, 68],[81,68],[82,68],
-                    //[80, 69],[81,69],[82,69],
-                    //[80, 71],[81,71],[82,71],
-                ]
-
-                .forEach(function(point) {
-                    cells[point[0]][point[1]] = 1;
-                });
-                
-                update();
-            }
-
-            /**
-             * Check which cells are still alive.
-             */
-            function update() {
-                
-                var result = [];
-                /**
-                 * Return amount of alive neighbours for a cell
-                 */
-                function _countNeighbours(x, y) {
-                    var amount = 0;
-                    
-                    function _isFilled(x, y) {
-                        return cells[x] && cells[x][y];
-                    }
-                    
-                    if (_isFilled(x-1, y-1)) amount++;
-                    if (_isFilled(x,   y-1)) amount++;
-                    if (_isFilled(x+1, y-1)) amount++;
-                    if (_isFilled(x-1, y  )) amount++;
-                    if (_isFilled(x+1, y  )) amount++;
-                    if (_isFilled(x-1, y+1)) amount++;
-                    if (_isFilled(x,   y+1)) amount++;
-                    if (_isFilled(x+1, y+1)) amount++;
-                    
-                    return amount;
-                }
-                
-                cells.forEach(function(row, x) {
-                    result[x] = [];
-                    row.forEach(function(cell, y) {
-                        var alive = 0,
-                            count = _countNeighbours(x, y);
-                        
-                        if (cell > 0) {
-                            alive = count === 2 || count === 3 ? 1 : 0;
-                        } else {
-                            alive = count === 3 ? 1 : 0;
-                        }
-                        
-                        result[x][y] = alive;
-                    });
-                });
-                
-                cells = result;
-                
-                draw();
-            }
-
-            /**
-             * Draw cells on canvas
-             */
-                function draw() {
-                    canvas.clearRect(0, 0, 2000, 2000);
-                    cells.forEach(function(row, x) {
-                        row.forEach(function(cell, y) {
-                            canvas.beginPath();
-                            canvas.rect(x*8, y*8, 8, 8);
-                            if (cell) {
-                                canvas.fill();
-                            } else {
-                                canvas.stroke();
+            	</div>
+                <br>
+                <canvas id="id" width="1000" height="1000"></canvas>
+                <script>
+                    window.onload = function(){/**
+                     * Conway's Game of Life.
+                     *
+                     * A simple Javascript implementation by ankr.
+                     *
+                     * @author http://ankr.dk
+                     */
+                    var canvas = document.getElementById('id').getContext('2d'),
+                        cells = [];
+                    canvas.strokeStyle = '#00FF00';
+                    canvas.fillStyle = '009900';
+                    init(); 
+                    /**
+                     * Initialize game.
+                     *
+                     * Will place a Gosper glider gun in the world and start simulation.
+                     */
+                    function init() {
+                        for (var i=0; i<70; i++) {
+                            cells[i] = [];
+                            for (var j=0; j<50; j++) {
+                                cells[i][j] = 0;
                             }
+                        }
+                        // Prefilled cells
+                        [
+                            // Gosper glider gun
+                            [1, 5],[1, 6],[2, 5],[2, 6],[11, 5],[11, 6],[11, 7],[12, 4],[12, 8],[13, 3],[13, 9],[14, 3],[14, 9],[15, 6],[16, 4],[16, 8],[17, 5],[17, 6],[17, 7],[18, 6],[21, 3],[21, 4],[21, 5],[22, 3],[22, 4],[22, 5],[23, 2],[23, 6],[25, 1],[25, 2],[25, 6],[25, 7],[35, 3],[35, 4],[36, 3],[36, 4],
+                                    
+                           // [1, 15],[1, 16],[2, 15],[2, 16],[11, 15],[11, 16],[11, 17],[12, 14],[12, 18],[13, 13],[13, 19],[14, 3],[14, 19],[15, 16],[16, 14],[16, 18],[17, 15],[17, 16],[17, 17],[18, 16],[21, 13],[21, 14],[21, 15],[22, 13],[22, 14],[22, 15],[23, 12],[23, 16],[25, 11],[25, 12],[25, 16],[25, 17],[35, 13],[35, 14],[36, 13],[36, 14],
+
+                            // Random cells
+                            // If you wait enough time these will eventually take part
+                            // in destroying the glider gun, and the simulation will be in a "static" state.
+                            //[60, 47],[61,47],[62,47],
+                            //[60, 48],[61,48],[62,48],
+                            [60, 49],[61,49],[62,49],
+                            [60, 51],[61,51],[62,51],
+
+                            //[80, 67],[81,67],[82,67],
+                            //[80, 68],[81,68],[82,68],
+                            //[80, 69],[81,69],[82,69],
+                            //[80, 71],[81,71],[82,71],
+                        ]
+                        .forEach(function(point) {
+                            cells[point[0]][point[1]] = 1;
+                        });   
+                        update();
+                    }
+                    /**
+                     * Check which cells are still alive.
+                     */
+                    function update() {
+                        var result = [];
+                        /**
+                         * Return amount of alive neighbours for a cell
+                         */
+                        function _countNeighbours(x, y) {
+                            var amount = 0;
+                            function _isFilled(x, y) {
+                                return cells[x] && cells[x][y];
+                            }
+                            if (_isFilled(x-1, y-1)) amount++;
+                            if (_isFilled(x,   y-1)) amount++;
+                            if (_isFilled(x+1, y-1)) amount++;
+                            if (_isFilled(x-1, y  )) amount++;
+                            if (_isFilled(x+1, y  )) amount++;
+                            if (_isFilled(x-1, y+1)) amount++;
+                            if (_isFilled(x,   y+1)) amount++;
+                            if (_isFilled(x+1, y+1)) amount++;   
+                            return amount;
+                        }
+                        cells.forEach(function(row, x) {
+                            result[x] = [];
+                            row.forEach(function(cell, y) {
+                                var alive = 0,
+                                    count = _countNeighbours(x, y);
+                                if (cell > 0) {
+                                    alive = count === 2 || count === 3 ? 1 : 0;
+                                } else {
+                                    alive = count === 3 ? 1 : 0;
+                                }
+                                result[x][y] = alive;
+                            });
                         });
-                    });
-                    setTimeout(function() {update();}, 10);
-                }; 
-            }; 
-            	</script>
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+                        cells = result;   
+                        draw();
+                    }
+                    /**
+                     * Draw cells on canvas
+                     */
+                        function draw() {
+                            canvas.clearRect(0, 0, 2000, 2000);
+                            cells.forEach(function(row, x) {
+                                row.forEach(function(cell, y) {
+                                    canvas.beginPath();
+                                    canvas.rect(x*8, y*8, 8, 8);
+                                    if (cell) {
+                                        canvas.fill();
+                                    } else {
+                                        canvas.stroke();
+                                    }
+                                });
+                            });
+                            setTimeout(function() {update();}, 10);
+                        }; 
+                    }; 
+                </script>
+            </div>
         </div>
-    </div>
-    <div class="panel-footer">Created by Alex Trzeciak</div>
-</body>
+        <div class="panel-footer">Created by Alex Trzeciak</div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+    </body>
 </html>

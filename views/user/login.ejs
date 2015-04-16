@@ -1,51 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<title>Login Page</title>
-</head>
-<body>
-	<div class="container">     
-        <div class="span12"> 
-	
-			<nav class="navbar navbar-inverse">
-				
-				<div class="container-fluid">
-				    <div class="navbar-header">
-				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				        <span class="sr-only">Toggle navigation</span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				      </button>
-				      <a class="navbar-brand" href="/">Home</a>
-				    </div>
-
-			</nav> 
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<title>Login Page</title>
+	</head>
+	<body>
+		<div class="container">     
+	        <div class="span12"> 
+				<nav class="navbar navbar-inverse">
+					<div class="container-fluid">
+					    <div class="navbar-header">
+					      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					      </button>
+					      <a class="navbar-brand" href="/">Home</a>
+					    </div>
+					</div>    
+				</nav> 
 				<div>
 					<h1>Login Page</h1>	
 				</div>
-			<br>
-			<form method="POST" action="/login">
-				<input type="text" name="username" placeholder="username">
-				<input type="password" name="password" placeholder="password">
-				<button>login</button>
-			</form>
-			<br>
-			<a href="/signup">Sign Up Page</a>
-			<br> 
-			<h5> Instructions </h5> 
-			<ul> 1. If you have a username and password, enter them above and press the 'login' button</ul>
-			<ul> 2. If succesful, you will be placed on your profile page where you can enter years to view music playlists from that year</ul>
-			<ul> 3. If you do not have an account or have forgotten your password, press the Sign Up Page button above to create a new account </ul>
-
-
+				<br>
+				<form method="POST" action="/login">
+					<input type="text" name="username" placeholder="username">
+					<input type="password" name="password" placeholder="password">
+					<button>login</button>
+				</form>
+				<br>
+				<a href="/signup">Sign Up Page</a>
+				<br> 
+				<h5> Instructions </h5> 
+				<ul> 1. If you have a username and password, enter them above and press the 'login' button</ul>
+				<ul> 2. If succesful, you will be placed on your profile page where you can enter years to view music playlists from that year</ul>
+				<ul> 3. If you do not have an account or have forgotten your password, press the Sign Up Page button above to create a new account </ul>
+			</div>
+		</div>
+		<div class="panel-footer">Created by Alex Trzeciak</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	</div>
-
-</body>
+	</body>
 </html>

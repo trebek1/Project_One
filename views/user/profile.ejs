@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<title>Profile Page</title>
-</head>
-<body>
- 	<div class="container">     
-        <div class="span12"> 
-			<nav class="navbar navbar-inverse"></nav> 
-			<div class="container" id = "container">
-				<div>
-					<h1>Hello <%= username %>!</h1>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<title>Profile Page</title>
+	</head>
+	<body>
+	 	<div class="container">     
+	        <div class="span12"> 
+				<nav class="navbar navbar-inverse"></nav> 
+				<div class="container" id = "container">
+					<div>
+						<h1>Hello <%= username %>!</h1>
 						<h4> Instructions </h4>
 						<ul> 1. Enter Year Below</ul>
 						<ul> 2. Click Hyperlink Generated on page to see playlists of music from that year </ul>
 					</div>
-				<form id = "year" class = "yearForm" method="POST" action="/profile"> 
-					<input type ="number" name = "year" placeholder = "Year">
-					<button>Add Year to Profile</button>
+					<form id = "year" class = "yearForm" method="POST" action="/profile"> 
+						<input type ="number" name = "year" placeholder = "Year">
+						<button>Add Year to Profile</button>
+						<br>
+						<br>
+					</form>
+					<form method = 'POST' action = '/logout?_method=DELETE'>
+						<button> Log Out </button>
+						<br>
+					</form>
 					<br>
-					<br>
-				</form>
-
-				<form method = 'POST' action = '/logout?_method=DELETE'>
-				<button> Log Out </button>
-				<br>
-				</form>
+					<h4> Saved Years </h4>
+					<ul id = "yearlist">
+						<% years.forEach(function(year) { %>
+							<li><a href="/years/<%= year.year %>"><%=year.year%></a></li>
+						<% }); %>
+					</ul>
+				</div>
 			</div>
-			<br>
-			<h4> Saved Years </h4>
-				<ul id = "yearlist">
-					<% years.forEach(function(year) { %>
-						<li><a href="/years/<%= year.year %>"><%=year.year%></a></li>
-					<% }); %>
-				</ul>
-			</div>	
+		</div>	
+		<div class="panel-footer">Created by Alex Trzeciak</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-	</div>
-		</div>
-</body>
+	</body>
 </html>
 
 

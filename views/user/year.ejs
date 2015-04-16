@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Profile Page</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-</head>
-<body>
-	<div class="container">     
-        <div class="span12"> 
-			<nav class="navbar navbar-inverse"></nav> 
-			<h1> Playlists Found Based On Input Year </h1>
-			<br>
-			<div>
-				<% results.forEach(function(result) { %>
-				<li id = "playlist_list"><iframe width="560" height="315" src="https://www.youtube.com/embed/?list=<%= result.id.playlistId %>" frameborder="0" allowfullscreen></iframe></li>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Profile Page</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">     
+	        <div class="span12"> 
+				<nav class="navbar navbar-inverse"></nav> 
+				<h1> Playlists Found Based On Input Year </h1>
 				<br>
-				<form id = "year" class = "yearForm" method="POST" action="/profile"> 
-				<button> Back to Profile </button> 
-				</form>
-				<br>
-				<% }); %>
+				<div>
+					<% results.forEach(function(result) { %>
+					<li id = "playlist_list"><iframe width="560" height="315" src="https://www.youtube.com/embed/?list=<%= result.id.playlistId %>" frameborder="0" allowfullscreen></iframe></li>
+					<br>
+					<form id = "year" class = "yearForm" method="POST" action="/profile"> 
+					<button> Back to Profile </button> 
+					</form>
+					<br>
+					<% }); %>
+					<br>
+					<br>
+				</div>
 			</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	</div>
 		</div>
-</body>
+		<div class="panel-footer">Created by Alex Trzeciak</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	</body>
 </html>

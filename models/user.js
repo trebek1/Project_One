@@ -18,7 +18,6 @@ module.exports = function (sequelize, DataTypes){
       }
     }
   },
-
   {
     instanceMethods: {
       checkPassword: function(password) {
@@ -57,7 +56,6 @@ module.exports = function (sequelize, DataTypes){
           } else {
             return false;
           }
-
         });
       },
       associate: function(models) {
