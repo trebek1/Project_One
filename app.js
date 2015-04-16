@@ -108,7 +108,7 @@ app.delete('/logout', function(req,res){
 
 app.get('/years/:year', function(req, res) {
 	var year = req.params.year;
-	var url = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=hot+100+number+1+hits+from+year+";
+	var url = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=hot+100+hits+year+end+";
 	url += year;
 	url += "&type=playlist&key=AIzaSyDmbWcViqYeOyx0Kqsqx_Ewl0MMeZF0I3w";
 
